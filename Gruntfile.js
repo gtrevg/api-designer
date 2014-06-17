@@ -86,7 +86,7 @@ module.exports = function (grunt) {
 
     connect: {
       options: {
-        hostname: 'localhost',
+        hostname:  grunt.option('host') || 'localhost',
         port:      grunt.option('port') || 9013
       },
 
@@ -303,6 +303,7 @@ module.exports = function (grunt) {
     'autoprefixer'
   ]);
 
+  
   grunt.registerTask('server', [
     'jshint-once',
     'less-and-autoprefixer',
@@ -310,6 +311,14 @@ module.exports = function (grunt) {
     'open',
     'watch'
   ]);
+
+  grunt.registerTask('server-noopen', [
+    'jshint-once',
+    'less-and-autoprefixer',
+    'connect:livereload',
+    'watch'
+  ]);
+
 
   grunt.registerTask('build', [
     'jshint-once',
