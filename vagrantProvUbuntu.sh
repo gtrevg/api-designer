@@ -23,6 +23,6 @@ npm install
 bower install --allow-root --config.interactive=false
 
 # -- background it so Vagrant properly returns
-nohup grunt server-noopen --host=0.0.0.0 &
-
+echo "Starting grunt server..."
+sudo nohup grunt server-noopen --host=0.0.0.0 0<&- &>/dev/null
 
