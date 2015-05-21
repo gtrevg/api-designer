@@ -11,6 +11,6 @@ npm install
 bower install --allow-root --config.interactive=false 
 echo "Starting up grunt server"
 
-sudo nohup grunt server-noopen --host=0.0.0.0 &
+sudo nohup grunt server-noopen 0<&- &>/dev/null &
 
 
